@@ -287,18 +287,18 @@ button:hover {
 }
 
 .hidden-txt:hover {
-    opacity: 1;
-	cursor: pointer;
-}
-
-.hidden-txt:hover ~ .icon-container #icon-path {
-    stroke-dashoffset: -70;
-    stroke: white;
-}
+		opacity: 1;
+		cursor: pointer;
+	}
 
 #icon-path {
 	stroke-dasharray: 70;
     transition: stroke-dashoffset 0.8s ease-in-out, stroke 0.8s ease-in-out;
+}
+
+.hidden-txt:hover ~ .icon-container #icon-path {
+	stroke-dashoffset: -70;
+	stroke: white;
 }
 
 .servizio img {
@@ -428,6 +428,13 @@ footer a {
 		font-size: 4vw;
 		margin-left: 5px;
 		margin-right: 5px;
+	}
+	.active {
+		opacity: 1;
+	}
+	.active ~ .icon-container #icon-path {
+		stroke-dashoffset: -70;
+		stroke: white;
 	}
 	.progetto img {
 		width: 75vw;
@@ -603,9 +610,9 @@ footer a {
 	}
     .servicePage h2 {
         padding-top: 2vw;
-	font-size: 12vw;
-	line-height: 1.2;
-	padding-bottom: 5vw;
+		font-size: 12vw;
+		line-height: 1.2;
+		padding-bottom: 5vw;
     }
 
     .services {

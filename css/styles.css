@@ -1,0 +1,637 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Font faces */
+@font-face {
+    font-family: 'title';
+    src: url('fonts/title.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'testo';
+    src: url('fonts/testo.ttf') format('truetype');
+}
+
+button:focus { outline:0 !important; }
+
+::selection {
+    background-color: blue;
+    color: inherit;
+}
+
+/* General styles */
+body {
+    background-color: #000;
+    color: white;
+    font-family: 'testo', Arial, sans-serif; 
+    line-height: 1.6;
+	animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+img {
+	display: block;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    display: flex; /* Utilizziamo flexbox per gestire l'allineamento */
+    align-items: center; /* Centra verticalmente gli elementi */
+    justify-content: flex-start; /* Allinea a sinistra il contenuto */
+    background-color: rgba(7, 10, 36, 0.1);
+    padding: 20px;
+    list-style-type: none;
+}
+
+nav ul {
+    display: flex; /* Utilizziamo flexbox anche qui */
+    align-items: center; /* Centra verticalmente gli elementi */
+    justify-content: center; /* Centra orizzontalmente gli elementi */
+    margin: 0;
+    padding-left: 6em;
+}
+
+#logo {
+	color: white;
+	font-family: 'title', Arial, sans-serif;
+}
+
+nav img {
+    vertical-align: middle; /* Assicura che l'immagine sia centrata verticalmente */
+	height: 1.6em;
+	display: inline;
+}
+
+nav ul li {
+    display: inline;
+	font-size: 1em;
+    margin: 0 10px;
+}
+
+nav a, footer a {
+	color: gray;
+	transition: all 0.3s ease;
+}
+
+a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.anim {
+	transform: translateY(-50px);
+    opacity: 0; /* Inizialmente invisibile */
+    transition: all 0.5s ease-out; /* Effetto di transizione */
+}
+
+.anim.visible {
+	transform: translateY(0);
+    opacity: 1;
+}
+
+.hero, .hook {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    background-image: url('images/bg0.png');
+	-webkit-box-shadow: inset 0 0 10px 10px #000;    
+    -moz-box-shadow: inset 0 0 10px 10px #000;
+    box-shadow: inset 0 0 50px 0px rgba(0,0,0,1);
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 80vh;
+    margin: auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.sparkle {
+	position: absolute;
+    width: 3px; /* Dimensioni delle stelle */
+    height: 3px;
+	background-color: #fff; /* Colore delle stelle */
+	border-radius: 50%; /* Rende le stelle rotonde */
+	box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5); /* Effetto glow delle stelle */
+	animation: sparkle 4s infinite ease-in-out; /* Animazione sparkle */
+}
+
+@keyframes sparkle {
+	0%, 100% {
+		transform: scale(0);
+		opacity: 0.2;
+	}
+	50% {
+		transform: scale(1);
+		opacity: 0.6;
+	}
+}
+
+.button-container {
+    display: flex; /* Dispone i bottoni in riga */
+}
+
+.hero h1 {
+    font-family: 'title', Arial, sans-serif;
+    font-size: 4.6em;
+	text-align: center;
+    margin-bottom: 20px;
+	background: linear-gradient(90deg, rgba(177, 231, 252,1) 22%, rgba(212, 243, 255,1) 50%, rgba(240, 250, 255,1) 77%);
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	text-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+	line-height: 1;
+}
+
+.hero h4 {
+    font-size: 1.5em;
+	font-weight: normal;
+    padding-bottom: 40px;
+	background: linear-gradient(90deg, rgba(210, 227, 252,1) 22%, rgba(235, 246, 252,1) 50%, rgba(240, 250, 255,1) 77%);
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+	margin-bottom: 2em;
+}
+
+.hook p {
+	margin-bottom: 1em;
+}
+
+button {
+    font-family: 'title', sans-serif;
+    color: gray;
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0.5em 2em;
+    border: 2px solid #474747;
+    border-radius: 100px;
+    background: rgba(0, 0, 0, 0.35);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5.9px);
+	-webkit-backdrop-filter: blur(5.9px);
+    cursor: pointer;
+    transition: all 0.2s ease;
+	margin-right:10px;
+	margin-left:10px;
+}
+
+button:hover {
+    background: radial-gradient(
+      60% 80% at center 100%,
+      #4e2ed1,
+      transparent
+    );
+	background-color: #1A237E;
+	box-shadow: 0 0 30px #9f8ced;
+    border: 2px solid #dee3ff;
+	color: white;
+}
+
+.servizi {
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+}
+
+#srv {
+    font-family: 'title', sans-serif;
+    color: gray;
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0.5em 2em;
+    border: 2px solid gray;
+    border-radius: 100px;
+	transition: all 0.2s ease;
+	margin-right:10px;
+	margin-left:10px;
+	position: relative
+}
+
+#srv:hover {
+    background: radial-gradient(
+      60% 80% at center 100%,
+      #636363,
+      transparent
+    );
+	background-color: #474747;
+	box-shadow: 0 0 35px rgba(240,240,240,0.9);
+    border: 2px solid #fff;
+	color: white;
+}
+
+.servizi h2 {
+    font-family: 'title', Arial, sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.servizio {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.servizio p {
+	font-weight: bold;
+	text-align: center;
+}
+
+.icon-container {
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	position: relative;
+}
+
+.hidden-txt {
+	position: absolute;
+	padding: 0.5em;
+	width: 150px;
+	height: 150px;
+	overflow: clip;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: all 0.7s ease-in;
+	z-index: 1;
+}
+
+.hidden-txt p {
+	font-weight: normal;
+}
+
+.hidden-txt:hover {
+		opacity: 1;
+		cursor: pointer;
+	}
+
+#icon-path {
+	stroke-dasharray: 70;
+    transition: stroke-dashoffset 0.8s ease-in-out, stroke 0.8s ease-in-out;
+}
+
+.hidden-txt:hover ~ .icon-container #icon-path {
+	stroke-dashoffset: -70;
+	stroke: white;
+}
+
+.servizio img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.portfolio {
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+	position: relative;
+}
+
+.portfolio h2 {
+    font-family: 'title', Arial, sans-serif; /* Utilizzo del font 'title' per i titoli di sezione */
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.portfolio h4 {
+	padding-top: 0.5em;
+}
+
+.progetto {
+    display: inline-block;
+    margin: 0 20px;
+    text-align: left;
+}
+
+.progetto p {
+	margin-bottom: 3vw;
+}
+
+.progetto img {
+    width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    transition: transform 0.3s; /* Aggiunge una transizione per un effetto di zoom più fluido */
+    outline: 3px solid #fff; /* Aggiunge un bordo esterno */
+    outline-offset: 5px; /* Distanza del bordo esterno dall'immagine */
+}
+
+.progetto img:hover {
+    transform: scale(1.07); /* Scala l'immagine del 10% dal centro */
+	outline-offset: 5px; /* Distanza del bordo esterno dall'immagine */
+}
+
+.progetto img:active {
+    transform: scale(0.96); /* Scala l'immagine del 10% dal centro */
+}
+
+
+.hook {
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+}
+
+.hook h2 {
+    font-family: 'title', Arial, sans-serif; 
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+footer {
+    text-align: center;
+    padding: 4em;
+    color: white;
+	background-color: black;
+}
+
+.footer-img {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	display: flex;
+	justify-content: center;
+}
+
+.footer-img img {
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	height: 2em;
+	width: 2em;
+	opacity: 0.5;
+	transition: all 0.3s ease;
+}
+
+.footer-img img:hover {
+	opacity: 1;
+}
+
+footer a {
+	color: gray;
+}
+
+@media (max-width: 768px) {
+	nav ul {
+		 padding-left: 0;
+	}
+	nav ul li {
+		font-size: 0.7em;
+	}
+	.hero, .hook {
+		height: 60vh;
+	}
+	.hero h1, .servizi h2, .hook h2, .portfolio h2, .about h2{
+		font-size: 10vw;		
+	}
+	
+	.hero h4 {
+		font-size: 5vw;
+		padding-left: 7vw;
+		padding-right: 7vw;
+	}
+	
+	p {
+		font-size: 3vw;
+	}
+	.icon-container {
+		width: 35vw;
+		height: 35vw;
+	}
+	button {
+		font-size: 4vw;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	.active {
+		opacity: 1;
+	}
+	.active ~ .icon-container #icon-path {
+		stroke-dashoffset: -70;
+		stroke: white;
+	}
+	.progetto img {
+		width: 75vw;
+		height: 50vw;
+	}
+	.progetto p {
+		margin-bottom: 10vw;
+	}
+	footer a {
+		font-size: 3vw;
+	}
+	
+}
+
+
+/* CONTACT PAGE */
+
+.about {
+    background-image: url('images/bg0.png');
+	-webkit-box-shadow: inset 0 0 10px 10px #000;    
+    -moz-box-shadow: inset 0 0 10px 10px #000;
+    box-shadow: inset 0 0 50px 0px rgba(0,0,0,1);
+    background-position: center top;
+    text-align: center;
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 4vw;
+	height:80vh;
+}
+
+.about h2 {
+    font-family: 'title', Arial, sans-serif;
+    font-size: 3vw;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	padding-top: 2vw;
+}
+
+.aboutmap {
+	align-items: right;
+}
+
+#mappa {
+	height: auto;
+	margin-right: 2.5vw;
+	border: 3px solid #f1f3f4;
+	outline: 2px solid #fff; /* Aggiunge un bordo esterno */
+    outline-offset: 5px;
+	border-radius: 1vw;
+	background-color: #f1f3f4;
+}
+
+.infos {
+	display: flex;
+    flex-direction: column;
+	border-left: 2px solid white;
+	padding-left: 2vw;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.text {
+	text-align: left;
+	padding-left: 1vw;
+}
+
+@media (max-width: 768px) {
+	.about {
+		height: auto;
+	}
+	.about h2 {
+		padding-top: 2vw;
+		font-size: 12vw;
+		line-height: 1.2;
+		padding-bottom: 5vw;
+	}
+	.content {
+		display: flex;
+		flex-direction: column;
+	}
+	#mappa {
+		height: auto;
+		margin-right: 0;
+		margin-bottom: 8vw;
+		border-radius: 6vw;
+	}
+	.infos {
+		border-left: 0;
+		border-top: 2px solid white;
+		padding-left: 0;
+		padding-top: 5vw;
+		padding-bottom: 10vw;
+	}
+}
+
+
+/* SERVICES PAGE  */
+.servicePage {
+	text-align: center;
+	padding-top: 4vw;
+	padding-bottom: 5vw;
+	background-image: url('images/bg0.png');
+	background-size: cover;
+	background-position: center top;
+	-webkit-box-shadow: inset 0 0 10px 10px #000;    
+	-moz-box-shadow: inset 0 0 10px 10px #000;
+	box-shadow: inset 0 0 50px 0px rgba(0,0,0,1);
+}
+
+.servicePage h2 {
+    font-family: 'title', Arial, sans-serif;
+    font-size: 3vw;
+	margin-bottom: 5vh;
+}
+
+.services {
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	width: 80vw;
+	height: 64vw;
+}
+	
+.service {
+	flex: 1 0 16vw; /* Imposta la larghezza degli elementi intorno al 21% per avere 4 colonne con il padding */
+	margin: 1vw;
+	height: 30vw;
+	border-radius: 1.4vw;
+    background-color: rgba(255, 255, 255, 0.15); /* Colore di sfondo traslucido */
+	border: 2px solid rgba(255, 255, 255, 0.2); /* Bordo traslucido */
+	backdrop-filter: blur(10px); /* Sfondo sfocato */
+	transition: background-color 0.3s, border-color 0.3s;
+	padding: 1vw;
+	overflow: clip;
+	position: relative;
+	transition: all 0.5s ease-in-out;
+}
+
+.service:hover {
+	background-color: rgba(255, 255, 255, 0.25); /* Colore di sfondo più chiaro al passaggio del mouse */
+	border-color: rgba(255, 255, 255, 0.3); /* Bordo più evidente al passaggio del mouse */
+}
+
+.service svg {
+	height: 5vw;
+}
+
+.service h4 {
+	font-size: 1.17vw;
+}
+.service p {
+	font-size: 1.17vw;
+	padding-top: 0.7vw;
+}
+
+@media (max-width: 768px) {
+	.servicePage {
+		background-image: url('images/bgmobile.png');
+	}
+    .servicePage h2 {
+        padding-top: 2vw;
+		font-size: 12vw;
+		line-height: 1.2;
+		padding-bottom: 5vw;
+    }
+
+    .services {
+        width: 80vw; /* Raddoppia la larghezza del contenitore principale */
+        height: auto; /* Raddoppia l'altezza del contenitore principale */
+    }
+
+    .service {
+        flex: 1 0 80vw; /* Raddoppia la larghezza degli elementi per avere 2 colonne */
+        height: 70vw; /* Aumenta l'altezza degli elementi */
+    }
+
+    .service h4, .service p {
+        font-size: 3.8vw; /* Aumenta la grandezza del testo */
+    }
+	
+	
+	.service svg {
+		height: 10vw;
+	}
+
+}
